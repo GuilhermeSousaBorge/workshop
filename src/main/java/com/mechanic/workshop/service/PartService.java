@@ -48,7 +48,7 @@ public class PartService {
                 part.getUnityPrice(), part.getQuantity(), part.getCreatedAt(), part.getUpdatedAt())).toList();
     }
 
-    public long updatePart(@PathVariable long id, @RequestBody PartRequestDto payload){
+    public long updatePart(long id, PartRequestDto payload){
         Optional<Part> part = this.partRepository.findById(id);
         if(part.isPresent()){
             Part rawPart = part.get();
@@ -78,7 +78,7 @@ public class PartService {
         throw new BadRequestException("Peça nao encontrada");
     }
 
-    public long deletePart(@PathVariable  long id){
+    public long deletePart(long id){
         Optional<Part> part = this.partRepository.findById(id);
         if(part.isPresent()){
             this.partRepository.delete(part.get());
