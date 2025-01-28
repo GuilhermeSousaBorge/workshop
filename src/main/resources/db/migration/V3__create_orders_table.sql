@@ -4,6 +4,8 @@ CREATE TABLE orders (
     workforce DOUBLE PRECISION NOT NULL,
     user_id INTEGER NOT NULL,
     part_id INTEGER NOT NULL,
+    part_amount INTEGER,
+    status BOOLEAN NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     deleted_at TIMESTAMP,
     CONSTRAINT fk_order_user FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE,
