@@ -38,7 +38,7 @@ public class User {
     @Column(name = "cpf_cnpj")
     private String cpfCnpj;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "userId", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Order> order;
 
     @CreationTimestamp
