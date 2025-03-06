@@ -3,11 +3,11 @@
 ## Esquema do banco de dados
 ![image](https://github.com/user-attachments/assets/e4be97e4-4405-4566-a287-b29326ac999c)
 
-Descrição
+## Descrição
 
 O Sistema de Gestão de Oficina Mecânica é um software desenvolvido para facilitar o gerenciamento de oficinas mecânicas, otimizando o controle de serviços, estoque de peças, clientes e finanças.
 
-Funcionalidades
+## Funcionalidades
 
 Cadastro de Clientes: Registre e gerencie informações de clientes.
 
@@ -21,7 +21,7 @@ Relatórios: Gere relatórios detalhados sobre serviços, clientes e receitas.
 
 Controle de Usuários e Permissões: Gerencie o acesso e os níveis de permissão dos usuários.
 
-Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 Back-end: .NET Core
 
@@ -31,12 +31,5 @@ Banco de Dados: PostgreSQL
 
 Autenticação: JWT
 
-Deploy: Railway
+Deploy: 
 
-Requisitos
-
-.NET Core SDK
-
-Node.js
-
-PostgreSQL
