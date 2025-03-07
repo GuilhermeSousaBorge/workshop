@@ -9,34 +9,33 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-@Entity(name = "tb_user")
+@Entity(name = "tb_address")
 @Data
 @Builder
-public class User {
+public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    private String name;
+    private String street;
 
-    private String phone;
+    private String number;
 
-    @Column(name = "cpf_cnpj")
-    private String cpfCnpj;
+    private String zipCode;
 
-    private String role;
+    private String district;
 
-    @OneToOne(mappedBy = "user")
-    private Account account;
+    @Column(name = "user_id")
+    private UUID userId;
 
-    @OneToOne(mappedBy = "user")
-    private Address address;
+    @OneToOne
+    @JoinColumn(name = "user_id", insertable = false, updatable = false)
+    private User user;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
 
     @UpdateTimestamp
     private LocalDateTime updatedAt;
-
 }

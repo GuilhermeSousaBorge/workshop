@@ -15,7 +15,9 @@ public class SecurityConfig {
     private static final String[] PUBLIC_ROUTES = {
             "/swagger-ui/**",
             "/v3/api-docs/**",
-            "/swagger-resources/**"
+            "/swagger-resources/**",
+            "/api/user",
+            "/api/user/address"
     };
 
     @Bean

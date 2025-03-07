@@ -1,42 +1,41 @@
 package com.mechanic.workshop.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.Builder;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.validator.constraints.Length;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-@Entity(name = "tb_user")
+@Entity(name = "tb_account")
 @Data
 @Builder
-public class User {
+public class Account {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    private String name;
+    @Email(message = "Campo email invalido")
+    private String email;
 
-    private String phone;
+    @Length(min = 6, max=100, message = "Senha invalida")
+    private String password;
 
-    @Column(name = "cpf_cnpj")
-    private String cpfCnpj;
+    @Column(name = "user_id")
+    private UUID userId;
 
-    private String role;
-
-    @OneToOne(mappedBy = "user")
-    private Account account;
-
-    @OneToOne(mappedBy = "user")
-    private Address address;
+    @OneToOne
+    @JoinColumn(name = "user_id", insertable = false, updatable = false)
+    private User user;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
 
     @UpdateTimestamp
     private LocalDateTime updatedAt;
-
 }
